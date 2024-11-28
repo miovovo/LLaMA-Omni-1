@@ -20,7 +20,9 @@
 
 PS：
 
-1.感谢LLama-Omni的工作！也感谢另一位小伙伴@EDGSCOUT-li，我们一起复现这篇论文的训练过程，由于我们打算去复现freeze_omni(https://github.com/VITA-MLLM/Freeze-Omni)。如果有issue看到后会及时回复，并对该项目进行更新。
+1.感谢LLama-Omni的工作！也感谢另一位小伙伴@EDGSCOUT-li，我们一起复现这篇论文的训练过程，由于我们打算去复现freeze_omni(https://github.com/VITA-MLLM/Freeze-Omni)。
+
+如果有issue看到后会及时回复，并对该项目进行更新。
 
  2.由于资源限制还没有用更多的数据训练好一个能work的模型并进行发布，后续可能会结合freeze的方法训练好一个中文端到端对话的模型。
 
