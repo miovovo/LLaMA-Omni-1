@@ -45,8 +45,6 @@ class CustomDataset(Dataset):
         item = self.questions[index]
         speech_file = item["speech"]
         qs = item["conversations"][0]["value"]
-        
-        #新增了re
         re = item["conversations"][1]["value"]
 
         conv = conv_templates[args.conv_mode].copy()
@@ -96,7 +94,6 @@ def train_model(args):
 
     model_path = os.path.expanduser(args.model_path)
     tokenizer, model, context_len = create_model(model_path, args.model_base, is_lora=args.is_lora, s2s=args.s2s)
-
     
     questions = json.load(open(os.path.expanduser(args.question_file), "r"))
     questions = get_chunk(questions, args.num_chunks, args.chunk_idx) #chunk 1 chunk-idx 0 取list中的多少进行测试
