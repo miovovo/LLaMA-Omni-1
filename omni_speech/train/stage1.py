@@ -27,7 +27,7 @@ def collate_fn(batch):
         
     input_ids,labels,speech_tensors,speech_lengths = zip(*batch)
     input_ids = pad_sequence(input_ids, batch_first=True, padding_value=128009)
-    labels = pad_sequence(labels, batch_first=True, padding_value=128009)
+    labels = pad_sequence(labels, batch_first=True, padding_value=128009)  #相比于训练：增加了label
 
     speech_tensors = torch.stack(speech_tensors, dim=0)
     speech_lengths = torch.stack(speech_lengths, dim=0)
@@ -45,6 +45,8 @@ class CustomDataset(Dataset):
         item = self.questions[index]
         speech_file = item["speech"]
         qs = item["conversations"][0]["value"]
+        
+        #新增了re
         re = item["conversations"][1]["value"]
 
         conv = conv_templates[args.conv_mode].copy()
